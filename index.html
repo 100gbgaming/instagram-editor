@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Instagram Editor</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- LEFT EDITOR -->
+
+<div class="editor">
+
+<h2>Instagram Editor</h2>
+
+<label>Username</label>
+<input id="usernameInput">
+
+<label>Name</label>
+<input id="nameInput">
+
+<label>Followers</label>
+<input id="followersInput" type="number">
+
+<label>Following</label>
+<input id="followingInput" type="number">
+
+<label>Bio</label>
+<textarea id="bioInput"></textarea>
+
+<label>Profile Picture</label>
+<input type="file" id="profileUpload">
+
+<label>Add Story</label>
+<input type="file" id="storyUpload">
+
+<label>Add Post</label>
+<input type="file" id="postUpload">
+
+<label>Reel Views</label>
+<input id="reelViewsInput" type="number">
+
+<label>Likes</label>
+<input id="likesInput" type="number">
+
+<button onclick="updateProfile()">Update</button>
+
+</div>
+
+
+<!-- PHONE PREVIEW -->
+
+<div class="preview">
+
+<div class="phone">
+
+<div class="topbar">
+
+<span>Instagram</span>
+
+</div>
+
+<!-- STORIES -->
+
+<div class="stories" id="stories"></div>
+
+<!-- PROFILE -->
+
+<div class="profile">
+
+<img id="profilePic" src="https://via.placeholder.com/80">
+
+<div class="stats">
+
+<div>
+<span id="posts">0</span>
+<p>Posts</p>
+</div>
+
+<div>
+<span id="followers">0</span>
+<p>Followers</p>
+</div>
+
+<div>
+<span id="following">0</span>
+<p>Following</p>
+</div>
+
+</div>
+
+</div>
+
+<h3 id="username">username</h3>
+<p id="name">name</p>
+<p id="bio">bio</p>
+
+<hr>
+
+<div class="tabs">
+
+<button onclick="showPosts()">Posts</button>
+<button onclick="showReels()">Reels</button>
+
+</div>
+
+<div id="postsGrid" class="grid"></div>
+
+<div id="reelsPage" class="reels">
+
+<h4>Reel Insights</h4>
+<p>Views: <span id="reelViews">0</span></p>
+<p>Likes: <span id="likes">0</span></p>
+
+</div>
+
+<div class="navbar">
+
+🏠 🔍 ➕ 🎬 👤
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
