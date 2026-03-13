@@ -1,6 +1,6 @@
 body{
 margin:0;
-font-family:Arial;
+font-family:Arial, Helvetica, sans-serif;
 background:#f2f2f2;
 }
 
@@ -9,7 +9,7 @@ display:flex;
 height:100vh;
 }
 
-/* EDIT PANEL */
+/* LEFT EDIT PANEL */
 
 .editor{
 width:35%;
@@ -19,68 +19,62 @@ overflow:auto;
 border-right:1px solid #ddd;
 }
 
-.editor input, textarea{
+.editor input,
+.editor textarea{
 width:100%;
 padding:10px;
 margin-bottom:15px;
+border:1px solid #ccc;
+border-radius:6px;
 }
 
-/* PHONE */
+/* RIGHT PREVIEW AREA */
 
 .preview{
 width:65%;
 display:flex;
 justify-content:center;
 align-items:center;
+background:#e9e9e9;
 }
+
+/* PHONE FRAME */
 
 .phone{
 width:360px;
 height:700px;
-background:white;
+background:#000;
+color:white;
 border:12px solid black;
 border-radius:40px;
 overflow:auto;
-padding:10px;
+padding:15px;
+box-shadow:0 0 25px rgba(0,0,0,0.3);
 }
 
-/* TOP BAR */
+/* TOP HEADER */
 
-.topbar{
-font-weight:bold;
+.ig-header{
 text-align:center;
-margin-bottom:10px;
+font-weight:bold;
+font-size:18px;
+margin-bottom:15px;
 }
 
-/* STORIES */
+/* PROFILE SECTION */
 
-.stories{
-display:flex;
-gap:10px;
-overflow-x:auto;
-margin-bottom:10px;
-}
-
-.story{
-width:60px;
-height:60px;
-border-radius:50%;
-border:3px solid red;
-background-size:cover;
-}
-
-/* PROFILE */
-
-.profile{
+.profile-section{
 display:flex;
 align-items:center;
 gap:15px;
 }
 
-.profile img{
-width:75px;
-height:75px;
+.profile-pic{
+width:80px;
+height:80px;
 border-radius:50%;
+border:3px solid #ff00aa;
+object-fit:cover;
 }
 
 .stats{
@@ -90,9 +84,92 @@ gap:20px;
 
 .stats div{
 text-align:center;
+font-size:14px;
 }
 
-/* GRID */
+.stats span{
+font-weight:bold;
+}
+
+/* PROFILE INFO */
+
+.profile-info{
+margin-top:10px;
+}
+
+.profile-info h3{
+margin:0;
+font-size:16px;
+}
+
+.profile-info p{
+margin:3px 0;
+font-size:14px;
+}
+
+/* FOLLOW BUTTONS */
+
+.buttons{
+display:flex;
+gap:10px;
+margin-top:10px;
+}
+
+.follow{
+flex:1;
+background:#3897f0;
+border:none;
+color:white;
+padding:8px;
+border-radius:6px;
+cursor:pointer;
+}
+
+.message{
+flex:1;
+background:#262626;
+border:none;
+color:white;
+padding:8px;
+border-radius:6px;
+cursor:pointer;
+}
+
+/* STORIES */
+
+.stories{
+display:flex;
+gap:10px;
+overflow-x:auto;
+margin:15px 0;
+}
+
+.story{
+width:60px;
+height:60px;
+border-radius:50%;
+border:3px solid #ff00aa;
+background-size:cover;
+background-position:center;
+}
+
+/* TABS */
+
+.tabs{
+display:flex;
+justify-content:center;
+gap:15px;
+margin:10px 0;
+}
+
+.tabs button{
+background:none;
+border:none;
+color:white;
+cursor:pointer;
+}
+
+/* POSTS GRID */
 
 .grid{
 display:grid;
@@ -106,7 +183,7 @@ height:120px;
 object-fit:cover;
 }
 
-/* REELS */
+/* REELS PAGE */
 
 .reels{
 display:none;
@@ -118,6 +195,7 @@ margin-top:20px;
 
 .navbar{
 text-align:center;
-font-size:20px;
+font-size:22px;
 margin-top:15px;
+letter-spacing:8px;
 }
