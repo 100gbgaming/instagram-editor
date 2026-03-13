@@ -1,28 +1,29 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Instagram Editor</title>
+<title>Instagram Profile Editor</title>
 <link rel="stylesheet" href="style.css">
-
 <script src="https://unpkg.com/lucide@latest"></script>
-
 </head>
 
 <body>
 
 <div class="container">
 
-<!-- LEFT EDITOR -->
+<!-- LEFT CONTROL PANEL -->
 
 <div class="editor">
 
-<h2>Instagram Editor</h2>
+<h2>Profile Editor</h2>
+
+<h3>Profile Info</h3>
 
 <label>Username</label>
 <input id="usernameInput">
 
-<label>Name</label>
-<input id="nameInput">
+<label>Posts</label>
+<input id="postsInput" type="number">
 
 <label>Followers</label>
 <input id="followersInput" type="number">
@@ -30,46 +31,71 @@
 <label>Following</label>
 <input id="followingInput" type="number">
 
-<label>Bio</label>
-<textarea id="bioInput"></textarea>
-
-<label>Profile Picture</label>
+<label>Profile Photo</label>
 <input type="file" id="profileUpload">
 
-<label>Add Story</label>
-<input type="file" id="storyUpload">
+<button onclick="updateProfile()">Update Profile</button>
 
-<label>Add Post</label>
-<input type="file" id="postUpload">
+<hr>
 
-<label>Reel Views</label>
-<input id="reelViewsInput" type="number">
+<h3>Icons Editor</h3>
 
-<label>Likes</label>
-<input id="likesInput" type="number">
+<label>Home Icon</label>
+<input type="file" id="homeIconUpload">
 
-<button onclick="updateProfile()">Update</button>
+<label>Search Icon</label>
+<input type="file" id="searchIconUpload">
+
+<label>Reels Icon</label>
+<input type="file" id="reelsIconUpload">
+
+<label>Profile Icon</label>
+<input type="file" id="profileIconUpload">
+
+<hr>
+
+<h3>Layout Settings</h3>
+
+<label>Phone Width</label>
+<input id="phoneWidth" type="number" value="360">
+
+<label>Phone Height</label>
+<input id="phoneHeight" type="number" value="720">
+
+<button onclick="updatePhoneSize()">Update Phone Size</button>
+
+<hr>
+
+<h3>Visibility</h3>
+
+<button onclick="toggleNavbar()">Hide / Show Navbar</button>
+
+<button onclick="toggleStats()">Hide / Show Stats</button>
+
+<button onclick="toggleProfile()">Hide / Show Profile</button>
 
 </div>
 
 
 
-<!-- PHONE PREVIEW -->
+<!-- RIGHT PREVIEW -->
 
 <div class="preview">
 
-<div class="phone">
+<div class="phone" id="phone">
 
 <div class="phone-content">
 
-<div class="ig-header">
-instagram
+<div class="header">
+
+<span id="username">jay_0025</span>
+
 </div>
 
 
 <div class="profile-section">
 
-<img id="profilePic" class="profile-pic" src="https://i.imgur.com/1X6sYQy.png">
+<img id="profilePic" src="https://i.imgur.com/V5KpYwS.png">
 
 <div class="stats">
 
@@ -79,12 +105,12 @@ instagram
 </div>
 
 <div>
-<span id="followers">0</span>
+<span id="followers">175</span>
 <p>followers</p>
 </div>
 
 <div>
-<span id="following">0</span>
+<span id="following">51</span>
 <p>following</p>
 </div>
 
@@ -93,26 +119,21 @@ instagram
 </div>
 
 
-<div class="profile-info">
-
-<h3 id="username">username</h3>
-
-<p id="name">name</p>
-
-<p id="bio">bio</p>
-
-</div>
-
-
 <div class="buttons">
 
-<button class="follow">Follow</button>
-<button class="message">Message</button>
+<button>Edit profile</button>
+
+<button>View archive</button>
 
 </div>
 
 
-<div class="stories" id="stories"></div>
+<div class="new-story">
+
+<div class="add-story">+</div>
+<p>New</p>
+
+</div>
 
 
 <hr>
@@ -120,32 +141,33 @@ instagram
 
 <div class="tabs">
 
-<button onclick="showPosts()">Posts</button>
-<button onclick="showReels()">Reels</button>
+<i data-lucide="grid"></i>
+<i data-lucide="bookmark"></i>
+<i data-lucide="camera"></i>
 
 </div>
 
 
-<div id="postsGrid" class="grid"></div>
+<div class="empty">
 
+<div class="camera-icon">
+<i data-lucide="camera"></i>
+</div>
 
-<div id="reelsPage" class="reels">
+<h2>Share Photos</h2>
 
-<h4>Reel Insights</h4>
+<p>When you share photos, they will appear on your profile.</p>
 
-<p>Views: <span id="reelViews">0</span></p>
-
-<p>Likes: <span id="likes">0</span></p>
+<a href="#">Share your first photo</a>
 
 </div>
 
 </div>
-
 
 
 <!-- NAVBAR -->
 
-<div class="navbar">
+<div class="navbar" id="navbar">
 
 <i data-lucide="home"></i>
 <i data-lucide="search"></i>
