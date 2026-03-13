@@ -1,65 +1,26 @@
 function updateProfile(){
 
-document.getElementById("username").innerText =
-document.getElementById("usernameInput").value
+username.innerText=usernameInput.value
 
-document.getElementById("name").innerText =
-document.getElementById("nameInput").value
+posts.innerText=postsInput.value
 
-document.getElementById("followers").innerText =
-document.getElementById("followersInput").value
+followers.innerText=followersInput.value
 
-document.getElementById("following").innerText =
-document.getElementById("followingInput").value
-
-document.getElementById("bio").innerText =
-document.getElementById("bioInput").value
-
-document.getElementById("reelViews").innerText =
-document.getElementById("reelViewsInput").value
-
-document.getElementById("likes").innerText =
-document.getElementById("likesInput").value
+following.innerText=followingInput.value
 
 }
-
 
 /* PROFILE PHOTO */
 
-document.getElementById("profileUpload").onchange=function(e){
+profileUpload.onchange=function(e){
 
 const file=e.target.files[0]
-if(!file) return
-
-const reader=new FileReader()
-
-reader.onload=function(){
-document.getElementById("profilePic").src=reader.result
-}
-
-reader.readAsDataURL(file)
-
-}
-
-
-/* ADD POST */
-
-document.getElementById("postUpload").onchange=function(e){
-
-const file=e.target.files[0]
-if(!file) return
 
 const reader=new FileReader()
 
 reader.onload=function(){
 
-const img=document.createElement("img")
-img.src=reader.result
-
-document.getElementById("postsGrid").appendChild(img)
-
-document.getElementById("posts").innerText =
-document.getElementById("postsGrid").children.length
+profilePic.src=reader.result
 
 }
 
@@ -68,47 +29,46 @@ reader.readAsDataURL(file)
 }
 
 
-/* ADD STORY */
+/* PHONE SIZE */
 
-document.getElementById("storyUpload").onchange=function(e){
+function updatePhoneSize(){
 
-const file=e.target.files[0]
-if(!file) return
+phone.style.width=phoneWidth.value+"px"
 
-const reader=new FileReader()
-
-reader.onload=function(){
-
-const story=document.createElement("div")
-story.className="story"
-story.style.backgroundImage=`url(${reader.result})`
-
-document.getElementById("stories").appendChild(story)
-
-}
-
-reader.readAsDataURL(file)
+phone.style.height=phoneHeight.value+"px"
 
 }
 
 
-/* TABS */
+/* TOGGLES */
 
-function showPosts(){
+function toggleNavbar(){
 
-document.getElementById("postsGrid").style.display="grid"
-document.getElementById("reelsPage").style.display="none"
+if(navbar.style.display==="none")
 
-}
+navbar.style.display="flex"
 
-function showReels(){
+else
 
-document.getElementById("postsGrid").style.display="none"
-document.getElementById("reelsPage").style.display="block"
+navbar.style.display="none"
 
 }
 
 
-/* LOAD ICONS */
+function toggleStats(){
+
+document.querySelector(".stats").classList.toggle("hidden")
+
+}
+
+
+function toggleProfile(){
+
+document.querySelector(".profile-section").classList.toggle("hidden")
+
+}
+
+
+/* ICONS */
 
 lucide.createIcons();
